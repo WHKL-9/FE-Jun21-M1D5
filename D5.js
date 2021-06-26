@@ -47,6 +47,17 @@ const crazyDiff = function(x){
         return (19-(-x))
     }
 }
+
+/*
+Another way of solving using the abs function 
+function crazyDiff(num) {
+  if (num > 19) {
+    return Math.abs(num - 19) * 3;
+  } else {
+    return Math.abs(num - 19);
+  }
+}
+*/
 //for testing
 /*
 console.log(crazyDiff(100))
@@ -65,11 +76,10 @@ const boundary = function(n){
             return false
         }
     }
-    else {
-        return false
-    }
+    
 }
-console.log(boundary(19))
+// for testing
+// console.log(boundary(19))
 
 /* WRITE YOUR CODE HERE */
 
@@ -77,14 +87,16 @@ console.log(boundary(19))
 Write a function "strivify" which accepts a string.
 It should add the word "Strive" in front of the given string, but if the given string already begins with "Strive", then it should just return the original string.
 */
-// const strivify = fucntion(x) {
-//     if ((x[0] != 'S') && (x[1]!='t')&& (x[2] != 'r') && (x[3] != 'i') && (x[4] != 'v')&&(x[5] != 'e')){
-//         return "Strive" + x 
-//     } else {
-//         return x
-//     }
-// }
-/* WRITE YOUR CODE HERE */
+const strivify = function (str) {
+    if (str.startsWith("Strive")) {
+      return str;
+    } else {
+      return "Strive " + str;
+    }
+  }
+// for testing  
+// console.log (strivify("xxx"))
+
 
 /* EXERCISE 6
 Write a function "check3and7" which accepts a positive number and check if it is a multiple of 3 or a multiple of 7.
@@ -128,15 +140,17 @@ Write a function "upperFirst" to capitalize the first letter of each word of a g
 
 //Not sure what went wrong here
 
+
 const upperFirst = function(x){
     const words = x.split(" ") //to split the sentence into an array of words
+
     for (let i =0; i < words.length; i ++){
         words[i] = words[i][0].toUpperCase() + words[i].substr(1) //capitalize the first letter of each word and rejoin them with them remaining of the words
     } 
-    words.join(" ") //joining the words back into the string 
+    return words.join(" ") // return the words in a string using the join function 
 }
 // for testing
-console.log(upperFirst("weoy"))
+//console.log(upperFirst("weoy howe ang"))
 
 /* WRITE YOUR CODE HERE */
 
@@ -171,7 +185,7 @@ const giveMeRandom = function(x){
 
 }
 // for testing
-// console.log(giveMeRandom(7))
+console.log(giveMeRandom(7))
 /* WHEN YOU ARE FINISHED
 Commit and push the code to your personal GitHub repository and share the link to your commit in Eduflow.
 */
